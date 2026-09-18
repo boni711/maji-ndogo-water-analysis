@@ -1,6 +1,6 @@
 # Maji Ndogo Water Access Analysis
 
-An end-to-end data project analyzing water service delivery across the fictional nation of Maji Ndogo — combining **SQL** for data engineering and exploration with **Power BI / DAX** for financial and operational reporting.
+An end-to-end data project analyzing water service delivery across the nation of Maji Ndogo — combining **SQL** for data engineering and exploration with **Power BI / DAX** for financial and operational reporting.
 
 ## Project Overview
 
@@ -14,18 +14,19 @@ This project investigates water access, infrastructure quality, and service deli
 
 ## Repository Structure
 
-```
-├── sql/
-│   ├── md_water_services.sql        # Database schema + data dump
-│   └── queries/                     # Exploration & cleaning queries
-├── powerbi/
-│   └── maji_ndogo_dashboard.pbix    # Power BI report file
-├── docs/
-│   └── slides/                      # Reference slide decks
-└── README.md
+
 ```
 
-> Adjust the tree above to match your actual folder layout once files are added.
+├── sql/
+│   ├── md_water_services.sql        # Database schema + data dump
+│   └── queries.sql                  # Exploration, cleaning, & audit queries
+├── powerbi/
+│   └── maji_ndogo_dashboard.pbix    # Power BI report file
+├── .gitignore                       # Ignored temporary and environment files
+├── LICENSE                          # MIT License
+└── README.md                        # Project documentation
+
+```
 
 ## Analysis & Insights
 
@@ -63,17 +64,18 @@ Highlighted key regional performance trends — Amanzi had the lowest cost-per-c
 
 ## How to Reproduce
 
-1. Restore the database:
+1. Restore the database using MySQL CLI or MySQL Workbench:
    ```bash
-   mysql -u <user> -p < sql/md_water_services.sql
-   ```
-2. Run the exploration/cleaning queries in `sql/queries/`.
-3. Open `powerbi/maji_ndogo_dashboard.pbix` in Power BI Desktop and refresh the data source connection.
+   mysql -u root -p md_water_services < sql/md_water_services.sql
 
-## Author
+```
 
-**Kiragu**
-Data & AI Policy | SQL, Python, Power BI
+2. Execute the data cleaning and audit scripts in `sql/queries.sql`.
+3. Open `powerbi/maji_ndogo_dashboard.pbix` in Power BI Desktop and refresh the data source connection to point to your local `md_water_services` instance.
 
----
-*Based on the Maji Ndogo dataset, a fictional case study used for practicing data engineering and BI workflows.*
+
+*Based on the Maji Ndogo dataset, a case study used for practicing data engineering and BI workflows.*
+
+```
+
+```
