@@ -1,6 +1,7 @@
 -- ============================================================
 -- Maji Ndogo Water Services — Insight Queries
 -- Database: md_water_services
+-- Author: Kiragu
 -- ============================================================
 
 -- ------------------------------------------------------------
@@ -34,7 +35,7 @@ ORDER BY l.province_name, l.location_type;
 SELECT assigned_employee_id, employee_name, email, phone_number
 FROM employee
 WHERE email        != TRIM(email)
-   OR phone_number  != TRIM(phone_number);
+   OR phone_number != TRIM(phone_number);
 
 -- Standardise: trim contact fields, rebuild a canonical email from the employee's name
 SELECT
@@ -51,7 +52,7 @@ FROM employee;
 -- Apply the cleanup
 UPDATE employee
 SET phone_number = TRIM(phone_number),
-    email         = TRIM(email);
+    email        = TRIM(email);
 
 
 -- ------------------------------------------------------------
@@ -93,8 +94,6 @@ WHERE v.time_in_queue > 60
 ORDER BY v.time_in_queue DESC;
 
 -- Surveyor score vs. independent auditor score
--- NOTE: assumes an `auditor_report` table (location_id, true_water_source_score)
--- loaded separately, per the standard Maji Ndogo course dataset.
 SELECT
     e.assigned_employee_id,
     e.employee_name,
