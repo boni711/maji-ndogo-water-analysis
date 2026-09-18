@@ -15,18 +15,8 @@ This project investigates water access, infrastructure quality, and service deli
 ## Repository Structure
 
 
-```
 
-├── sql/
-│   ├── md_water_services.sql        # Database schema + data dump
-│   └── queries.sql                  # Exploration, cleaning, & audit queries
-├── powerbi/
-│   └── maji_ndogo_dashboard.pbix    # Power BI report file
-├── .gitignore                       # Ignored temporary and environment files
-├── LICENSE                          # MIT License
-└── README.md                        # Project documentation
 
-```
 
 ## Analysis & Insights
 
